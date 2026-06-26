@@ -2,10 +2,387 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Herencia Cultural de Arequipa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23D2691E" width="1200" height="400"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Secciones */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #8B4513;
+            text-align: center;
+        }
+
+        /* Tarjetas */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Galería de imágenes representativas */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid #D2691E;
+        }
+
+        .gallery-item-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Herencia Cultural de Arequipa</h1>
-    <p>¡Mi sitio web ya está funcionando!</p>
+    <!-- Header y Navegación -->
+    <header>
+        <nav>
+            <h1>🏛️ Arequipa Cultural</h1>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#gastronomia">Gastronomía</a></li>
+                <li><a href="#tradiciones">Tradiciones</a></li>
+                <li><a href="#patrimonios">Patrimonios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h2>Bienvenido a la Herencia Cultural de Arequipa</h2>
+        <p>Descubre la riqueza histórica, tradiciones y gastronomía de la Ciudad Blanca del Perú</p>
+    </section>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Historia -->
+        <section id="historia">
+            <h2>📚 Historia de Arequipa</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-header">Fundación</div>
+                    <div class="card-content">
+                        <p>Arequipa fue fundada el 15 de agosto de 1540 por García Manuel de Carbajal. La ciudad fue construida siguiendo el modelo español de ordenamiento urbano.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Período Colonial</div>
+                    <div class="card-content">
+                        <p>Durante la época colonial, Arequipa se convirtió en un importante centro comercial y administrativo, gracias a su ubicación estratégica en la ruta comercial hacia el sur.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Época Republicana</div>
+                    <div class="card-content">
+                        <p>Arequipa jugó un papel crucial en la historia del Perú republicano, siendo cuna de importantes personajes y movimientos políticos que marcaron la nación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gastronomía -->
+        <section id="gastronomia">
+            <h2>🍲 Gastronomía Arequipeña</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-header">Rocoto Relleno</div>
+                    <div class="card-content">
+                        <p><strong>Plato típico por excelencia.</strong> El rocoto es relleno de carne molida, huevo y especias, bañado en salsa de queso y leche. Un sabor intenso y único que representa la gastronomía arequipeña.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Ceviche Arequipeño</div>
+                    <div class="card-content">
+                        <p>Preparado con pescado fresco marinado en jugo de limón, con cebolla roja y ají amarillo. Se acompaña con camote, choclo y maíz tostado.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Adobo Arequipeño</div>
+                    <div class="card-content">
+                        <p>Guiso tradicional de carne de cerdo marinada en vinagre, ajos y especias. Se sirve acompañado de papa y se complementa con una bebida típica como la chicha.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Papa a la Huancaína</div>
+                    <div class="card-content">
+                        <p>Papas cubiertas con una salsa cremosa de ají amarillo, queso fresco y leche. Se adorna con huevo duro y aceitunas negras.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Chupe de Camarones</div>
+                    <div class="card-content">
+                        <p>Caldo tradicional preparado con camarones frescos, papas, queso, huevos y especias. Es un plato muy nutritivo y sabroso.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Biscochos Arequipeños</div>
+                    <div class="card-content">
+                        <p>Postres tradicionales crujientes, hechos con harina, mantequilla y azúcar. Son ideales para acompañar un café o té.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tradiciones -->
+        <section id="tradiciones">
+            <h2>🎭 Tradiciones y Festividades</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-header">Fiestas de Arequipa</div>
+                    <div class="card-content">
+                        <p><strong>Agosto:</strong> Celebración del aniversario de la ciudad con desfiles, actividades culturales y festividades que duran todo el mes.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Semana Santa</div>
+                    <div class="card-content">
+                        <p>Procesiones religiosas ancestrales que recorren las calles del centro histórico, con participación de cofradías y hermandades que mantienen vivas las tradiciones.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Música Tradicional</div>
+                    <div class="card-content">
+                        <p>La música andina arequipeña es rica en sonidos de instrumentos tradicionales como la quena, zampoña y charango, que cuentan historias del pueblo.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Danzas Típicas</div>
+                    <div class="card-content">
+                        <p>Danzas como el "Marinera arequipeña" y el "Huayno" son expresiones de alegría y identidad cultural que se practican en festividades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patrimonios -->
+        <section id="patrimonios">
+            <h2>🏛️ Patrimonio Histórico y Cultural</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-header">Basílica Catedral</div>
+                    <div class="card-content">
+                        <p>La Catedral Metropolitana de Arequipa, ubicada en la Plaza de Armas, es una joya arquitectónica de sillar blanco construida en el siglo XVI.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Monasterio de Santa Catalina</div>
+                    <div class="card-content">
+                        <p>Monumento histórico del siglo XVI que funciona como museo. Sus estructuras coloniales, patios y celdas son testimonio de la vida religiosa arequipeña.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Iglesia de San Francisco</div>
+                    <div class="card-content">
+                        <p>Templo colonial con impresionante arquitectura de sillar, criptas subterráneas y una biblioteca que alberga valiosos documentos históricos.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Plaza de Armas</div>
+                    <div class="card-content">
+                        <p>Corazón histórico de Arequipa, rodeada de portales coloniales, la Catedral y edificios que representan siglos de arquitectura peruana.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Centro Histórico UNESCO</div>
+                    <div class="card-content">
+                        <p>En 2000, el Centro Histórico de Arequipa fue declarado Patrimonio de la Humanidad por su arquitectura colonial y su importancia cultural.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Volcán Misti</div>
+                    <div class="card-content">
+                        <p>Símbolo de Arequipa. Este volcán nevado de 5,822 metros es parte importante de la geografía y cosmovisión de la región.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Galería de elementos culturales -->
+            <h3 style="text-align: center; margin-top: 3rem; margin-bottom: 2rem; color: #8B4513;">Elementos Representativos</h3>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="gallery-item-icon">🏛️</div>
+                    <h4>Arquitectura Sillar</h4>
+                    <p>Construcciones en piedra blanca única de Arequipa</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-icon">🎨</div>
+                    <h4>Artesanía</h4>
+                    <p>Trabajos manuales de cerámica y tejidos tradicionales</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-icon">🎵</div>
+                    <h4>Música Andina</h4>
+                    <p>Sonidos ancestrales del Perú profundo</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-icon">👥</div>
+                    <h4>Comunidad</h4>
+                    <p>Pueblo unido por tradiciones y valores</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Herencia Cultural de Arequipa - Proyecto Académico</p>
+        <p>Celebrando la riqueza cultural y tradiciones de la Ciudad Blanca</p>
+        <p>🇵🇪 Arequipa, Perú</p>
+    </footer>
 </body>
 </html>
